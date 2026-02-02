@@ -6,9 +6,6 @@ def decision_tree(weather, temperature):
             return "Play outside"
     else:
         return "Stay home"
-
-
-# -------- USER INPUT --------
 weather = input("Enter weather (sunny/rainy): ").lower()
 temperature = int(input("Enter temperature in °C: "))
 
