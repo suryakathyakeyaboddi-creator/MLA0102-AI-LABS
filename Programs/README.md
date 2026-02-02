@@ -1,244 +1,151 @@
-# 🧠 Artificial Intelligence Search & Decision Algorithms
+## 1. Breadth First Search (BFS)
 
-This repository contains **standard implementations and pseudocode** of core **Artificial Intelligence algorithms** commonly taught in **AI courses, labs, exams, and interviews**.
+**Breadth First Search** explores a graph level by level. It starts from the root node and visits all neighboring nodes before moving to the next level.
 
-The focus is on **clarity, correctness, and standard problem-solving structure**.
-
----
-
-## 📌 Algorithms Covered
-
-1. Breadth First Search (BFS)
-2. Depth First Search (DFS)
-3. Uniform Cost Search (UCS)
-4. Water Jug Problem
-5. Greedy Best First Search (GBFS)
-6. Min-Max Algorithm
-7. Alpha-Beta Pruning
-8. Decision Tree (Rule-Based)
-9. A* Search Algorithm
-
----
-
-## 1️⃣ Breadth First Search (BFS)
-
-### 🔹 Idea
-Explores nodes **level by level** using a queue.
-
-### 🔸 Pseudocode
+### Pseudocode
 BFS(Graph, Start)
-create empty queue
+create an empty queue
 mark Start as visited
-enqueue Start
+insert Start into queue
 
-while queue not empty
-    node ← dequeue
-    process node
-    for each neighbor of node
+while queue is not empty
+    node ← remove from queue
+    visit node
+    for each adjacent node
         if not visited
             mark visited
-            enqueue neighbor
-
+            insert into queue
 
 ---
 
-## 2️⃣ Depth First Search (DFS)
+## 2. Depth First Search (DFS)
 
-### 🔹 Idea
-Explores as **deep as possible** before backtracking.
+**Depth First Search** explores a graph by going as deep as possible along a branch before backtracking.
 
-### 🔸 Pseudocode
-
-
+### Pseudocode
 DFS(Graph, Node)
 mark Node as visited
-process Node
+visit Node
 
-for each neighbor of Node
+for each adjacent node
     if not visited
-        DFS(Graph, neighbor)
-
+        DFS(Graph, adjacent node)
 
 ---
 
-## 3️⃣ Uniform Cost Search (UCS)
+## 3. Uniform Cost Search (UCS)
 
-### 🔹 Idea
-Expands the **lowest path cost** node first.
+**Uniform Cost Search** expands the node with the lowest path cost. It always guarantees the optimal solution when all costs are positive.
 
-### 🔸 Pseudocode
-
-
+### Pseudocode
 UCS(Graph, Start, Goal)
-priority_queue ← (cost=0, Start)
+priority queue ← (0, Start)
 
-while queue not empty
-    cost, node ← pop lowest cost
+while queue is not empty
+    cost, node ← remove lowest cost node
     if node is Goal
-        return path
+        return solution path
 
     for each neighbor
-        new_cost ← cost + edge_cost
-        push (new_cost, neighbor)
-
+        new_cost ← cost + edge cost
+        insert neighbor with new_cost
 
 ---
 
-## 4️⃣ Water Jug Problem (State Space Search)
+## 4. Water Jug Problem
 
-### 🔹 Idea
-Use BFS to reach a state where one jug has the target amount.
+The **Water Jug problem** is a classic state space search problem. Each state represents the amount of water in two jugs.
 
-### 🔸 State Representation
-
-
+### State Representation
 (x, y)
-x → water in jug A
-y → water in jug B
+x → amount of water in Jug A
+y → amount of water in Jug B
 
 
-### 🔸 Pseudocode
-
-
+### Pseudocode
 WaterJug(jugA, jugB, target)
-start_state ← (0, 0)
-queue ← start_state
-visited ← empty
+start from (0, 0)
+use BFS to explore all states
+avoid repeated states
 
-while queue not empty
-    state ← dequeue
-    if state matches target
-        return solution
-
-    generate all valid next states
-    add unvisited states to queue
-
+if any state matches target
+    return solution path
 
 ---
 
-## 5️⃣ Greedy Best First Search (GBFS)
+## 5. Greedy Best First Search (GBFS)
 
-### 🔹 Idea
-Chooses node with **lowest heuristic value only**.
+**GBFS** selects the next node based only on the heuristic value. It is fast but does not always guarantee the optimal path.
 
-### 🔸 Pseudocode
-
-
+### Pseudocode
 GBFS(Graph, Heuristic, Start, Goal)
-priority_queue ← (h(Start), Start)
+priority queue ← (heuristic(Start), Start)
 
 while queue not empty
-    node ← pop lowest heuristic
+    node ← lowest heuristic value
     if node is Goal
         return path
 
-    for each neighbor
-        add neighbor based on heuristic
-
+    expand node using heuristic values
 
 ---
 
-## 6️⃣ Min-Max Algorithm
+## 6. Min-Max Algorithm
 
-### 🔹 Idea
-Used in **two-player games** to choose optimal move.
+The **Min-Max algorithm** is used in two-player games. One player tries to maximize the score, while the other tries to minimize it.
 
-### 🔸 Pseudocode
-
-
+### Pseudocode
 MINIMAX(node, depth, maximizingPlayer)
-if depth == 0 or node is terminal
+if node is leaf or depth is zero
 return node value
 
 if maximizingPlayer
-    best ← -∞
-    for each child
-        best ← max(best, MINIMAX(child))
-    return best
+    return maximum of child values
 else
-    best ← +∞
-    for each child
-        best ← min(best, MINIMAX(child))
-    return best
-
+    return minimum of child values
 
 ---
 
-## 7️⃣ Alpha-Beta Pruning
+## 7. Alpha-Beta Pruning
 
-### 🔹 Idea
-Optimizes Min-Max by **pruning unnecessary branches**.
+**Alpha-Beta pruning** improves the Min-Max algorithm by removing branches that do not affect the final decision.
 
-### 🔸 Pseudocode
-
-
+### Pseudocode
 ALPHABETA(node, depth, alpha, beta, maximizingPlayer)
-if depth == 0
+if depth is zero
 return value
 
-if maximizingPlayer
-    for each child
-        alpha ← max(alpha, ALPHABETA(child))
-        if beta ≤ alpha
-            break
-    return alpha
-else
-    for each child
-        beta ← min(beta, ALPHABETA(child))
-        if beta ≤ alpha
-            break
-    return beta
-
+update alpha and beta
+prune branches when beta ≤ alpha
 
 ---
 
-## 8️⃣ Decision Tree (Rule-Based)
+## 8. Decision Tree (Rule-Based)
 
-### 🔹 Idea
-Decision making using **IF–ELSE rules**.
+A **Decision Tree** uses simple IF–ELSE rules to make decisions based on input conditions.
 
-### 🔸 Pseudocode
-
-
+### Pseudocode
 DecisionTree(inputs)
-if condition1
-if condition2
-return decision A
+if condition is true
+return decision
 else
-return decision B
-else
-return decision C
+return alternate decision
 
 
 ---
 
-## 9️⃣ A* Search Algorithm
+## 9. A* Search Algorithm
 
-### 🔹 Idea
-Uses **cost + heuristic** to find optimal path.
+**A\*** is an informed search algorithm that combines path cost and heuristic value to find the optimal path.
 
-### 🔸 Formula
-
-
+### Formula
 f(n) = g(n) + h(n)
 
 
-### 🔸 Pseudocode
-
-
+### Pseudocode
 AStar(Graph, Start, Goal)
-open_list ← Start
-g(Start) ← 0
+initialize open list with Start
+calculate f(n) for each node
 
-while open_list not empty
-    node ← lowest f(n)
-    if node is Goal
-        return path
-
-    for each neighbor
-        tentative_g ← g(node) + cost
-        if better path found
-            update costs
-            add neighbor to open_list
-
-
+select node with lowest f(n)
+expand until Goal is reached
