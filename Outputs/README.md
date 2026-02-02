@@ -1,14 +1,5 @@
----
-
-## 🖼️ Outputs & Screenshots
-
-This folder contains **execution output screenshots** for all implemented algorithms.  
-Each screenshot shows **user input and corresponding output**, helping reviewers clearly understand how the algorithm works.
-
-## 📌 Algorithm-wise Output Description
-
 ### 1️⃣ Breadth First Search (BFS)
-📷 **File:** `bfs_output.png`  
+📷 **File:** `bfs_output.jpg`  
 Shows:
 - Start node input
 - Level-wise traversal order
@@ -17,7 +8,7 @@ Shows:
 ---
 
 ### 2️⃣ Depth First Search (DFS)
-📷 **File:** `dfs_output.png`  
+📷 **File:** `dfs_output.jpg`  
 Shows:
 - Recursive traversal
 - Depth-wise node exploration
@@ -26,7 +17,7 @@ Shows:
 ---
 
 ### 3️⃣ Uniform Cost Search (UCS)
-📷 **File:** `ucs_output.png`  
+📷 **File:** `ucs_output.jpg`  
 Shows:
 - Path cost calculation
 - Priority queue expansion
@@ -35,7 +26,7 @@ Shows:
 ---
 
 ### 4️⃣ Water Jug Problem
-📷 **File:** `water_jug_output.png`  
+📷 **File:** `water_jug_output.jpg`  
 Shows:
 - Jug capacities input
 - Target value
@@ -45,7 +36,7 @@ Shows:
 ---
 
 ### 5️⃣ Greedy Best First Search (GBFS)
-📷 **File:** `gbfs_output.png`  
+📷 **File:** `gbfs_output.jpg`  
 Shows:
 - Heuristic-based node selection
 - Path chosen based only on heuristic
@@ -54,7 +45,7 @@ Shows:
 ---
 
 ### 6️⃣ Min-Max Algorithm
-📷 **File:** `minimax_output.png`  
+📷 **File:** `minimax_output.jpg`  
 Shows:
 - Leaf node values input
 - Game tree evaluation
@@ -63,7 +54,7 @@ Shows:
 ---
 
 ### 7️⃣ Alpha-Beta Pruning
-📷 **File:** `alphabeta_output.png`  
+📷 **File:** `alphabeta_output.jpg`  
 Shows:
 - Leaf node values
 - Pruned branches
@@ -72,7 +63,7 @@ Shows:
 ---
 
 ### 8️⃣ Decision Tree (Outlook / Play Tennis)
-📷 **File:** `decision_tree_output.png`  
+📷 **File:** `decision_tree_output.jpg`  
 Shows:
 - Outlook, Humidity, Wind inputs
 - Rule-based decision
@@ -81,27 +72,10 @@ Shows:
 ---
 
 ### 9️⃣ A* Search Algorithm
-📷 **File:** `astar_output.png`  
+📷 **File:** `astar_output.jpg`  
 Shows:
 - Start and goal node input
 - g(n), h(n), f(n) evaluation
 - Optimal shortest path
-
----
-
-## ✅ Purpose of Outputs Folder
-
-✔ Helps evaluators quickly verify correctness  
-✔ Useful for lab submissions and viva  
-✔ Improves project presentation quality  
-✔ Demonstrates real execution, not just code  
-
----
-
-📌 **Tip:**  
-While capturing screenshots, ensure:
-- Inputs are clearly visible
-- Outputs are not cropped
-- Terminal window shows full result
 
 ---
