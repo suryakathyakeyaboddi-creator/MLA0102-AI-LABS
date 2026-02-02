@@ -5,25 +5,6 @@
 This folder contains **execution output screenshots** for all implemented algorithms.  
 Each screenshot shows **user input and corresponding output**, helping reviewers clearly understand how the algorithm works.
 
----
-
-## 📂 Folder Structure
-
-outputs/
-│
-├── bfs_output.png
-├── dfs_output.png
-├── ucs_output.png
-├── water_jug_output.png
-├── gbfs_output.png
-├── minimax_output.png
-├── alphabeta_output.png
-├── decision_tree_output.png
-└── astar_output.png
-
-
----
-
 ## 📌 Algorithm-wise Output Description
 
 ### 1️⃣ Breadth First Search (BFS)
